@@ -12,7 +12,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var myTableView: UITableView!
     
-    let list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
+    var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (list.count)
@@ -26,8 +26,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == UITableViewCellEditingStyle.Delete{
+            list.removeAtIndex(indexPath.row)
+            myTableView.reloadData()
             //TODO -- 7:45 (https://www.youtube.com/watch?v=LrCqXmHenJY)
-            //Commit Prueba
         }
     }
     
