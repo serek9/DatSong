@@ -12,19 +12,29 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var songInput: UITextField!
     @IBOutlet weak var artistInput: UITextField!
-    
-    
+    @IBOutlet weak var switchArtist: UISwitch!
     
     @IBAction func addButton(sender: AnyObject) {
-        if songInput != ""{
-            list.append()
-            //TODO 12:36 -- (https://www.youtube.com/watch?v=LrCqXmHenJY)
+        if switchArtist.on{
+            if songInput.text != ""{
+                list.append(songInput.text!)
+                songInput.text = ""
+            }
+        }else{
+            if songInput.text != "" && artistInput.text != ""{
+                list.append(songInput.text!+" - "+artistInput.text!)
+                songInput.text = ""
+                artistInput.text = ""
+            }
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if switchArtist.on {
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

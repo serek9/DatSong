@@ -7,12 +7,13 @@
 //
 
 import UIKit
+var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
     
-    var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
+//    var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (list.count)
@@ -30,6 +31,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             myTableView.reloadData()
             //TODO -- 7:45 (https://www.youtube.com/watch?v=LrCqXmHenJY)
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        myTableView.reloadData()
     }
     
     override func viewDidLoad() {
