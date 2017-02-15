@@ -15,6 +15,8 @@
 		334CB5271E4CFE3F00AC12B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334CB5251E4CFE3F00AC12B8 /* LaunchScreen.storyboard */; };
 		334CB5321E4CFE3F00AC12B8 /* DatSongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CB5311E4CFE3F00AC12B8 /* DatSongTests.swift */; };
 		334CB53D1E4CFE3F00AC12B8 /* DatSongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334CB53C1E4CFE3F00AC12B8 /* DatSongUITests.swift */; };
+		3384855A1E54BC8C00EAFB86 /* vinyls.png in Resources */ = {isa = PBXBuildFile; fileRef = 338485581E54BC8C00EAFB86 /* vinyls.png */; settings = {ASSET_TAGS = (); }; };
+		3384855D1E54BD6800EAFB86 /* add-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3384855C1E54BD6800EAFB86 /* add-2.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		334CB5381E4CFE3F00AC12B8 /* DatSongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatSongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		334CB53C1E4CFE3F00AC12B8 /* DatSongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatSongUITests.swift; sourceTree = "<group>"; };
 		334CB53E1E4CFE3F00AC12B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		338485581E54BC8C00EAFB86 /* vinyls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vinyls.png; sourceTree = "<group>"; };
+		3384855C1E54BD6800EAFB86 /* add-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		334CB5191E4CFE3E00AC12B8 /* DatSong */ = {
 			isa = PBXGroup;
 			children = (
+				3384855C1E54BD6800EAFB86 /* add-2.png */,
+				338485581E54BC8C00EAFB86 /* vinyls.png */,
 				334CB51A1E4CFE3E00AC12B8 /* AppDelegate.swift */,
 				334CB51C1E4CFE3E00AC12B8 /* FirstViewController.swift */,
 				334CB51E1E4CFE3F00AC12B8 /* SecondViewController.swift */,
@@ -232,7 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				334CB5271E4CFE3F00AC12B8 /* LaunchScreen.storyboard in Resources */,
+				3384855D1E54BD6800EAFB86 /* add-2.png in Resources */,
 				334CB5241E4CFE3F00AC12B8 /* Assets.xcassets in Resources */,
+				3384855A1E54BC8C00EAFB86 /* vinyls.png in Resources */,
 				334CB5221E4CFE3F00AC12B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +493,7 @@
 				334CB5431E4CFE3F00AC12B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		334CB5441E4CFE3F00AC12B8 /* Build configuration list for PBXNativeTarget "DatSongTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				334CB5461E4CFE3F00AC12B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		334CB5471E4CFE3F00AC12B8 /* Build configuration list for PBXNativeTarget "DatSongUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				334CB5491E4CFE3F00AC12B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
