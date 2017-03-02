@@ -13,7 +13,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var myTableView: UITableView!
     
-//    var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (list.count)
@@ -29,7 +28,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         if editingStyle == UITableViewCellEditingStyle.Delete{
             list.removeAtIndex(indexPath.row)
             myTableView.reloadData()
-            //TODO -- 7:45 (https://www.youtube.com/watch?v=LrCqXmHenJY)
+            
         }
     }
     
@@ -49,4 +48,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
 
 }
+
+
+//VIDEO LISTAS -- (https://www.youtube.com/watch?v=LrCqXmHenJY)
+//VIDEO COREDATA -- https://www.youtube.com/watch?v=WcQkBYu86h8
 
