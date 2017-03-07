@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDel = UIApplication.sharedApplication().delegate as! DataController
         let context: NSManagedObjectContext = appDel.managedObjectContext
         let query = NSFetchRequest(entityName: "Song")
         do{
