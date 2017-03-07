@@ -7,20 +7,37 @@
 //
 
 import UIKit
-var list = ["Tame Impala", "The Black Angels", "Pond", "Melody's Echo Chamber"]
+import CoreData
+
+var list:[NSManagedObject] = []
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        let query = NSFetchRequest(entityName: "Song")
+        do{
+            list = try context.executeFetchRequest(query) as! [NSManagedObject]
+        }catch let error as NSError{
+            print(error)
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (list.count)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        myTableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row]
-        
+        cell.textLabel?.text = list[indexPath.row].valueForKeyPath("artistName"+" - "+"songName") as! String
         return(cell)
     }
     
@@ -31,22 +48,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         }
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        myTableView.reloadData()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
 
