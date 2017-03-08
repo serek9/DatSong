@@ -23,7 +23,7 @@ class SecondViewController: UIViewController {
     @IBAction func addButton(sender: AnyObject) {
         if switchArtist.on{
             if songInput.text != ""{
-                let appDel = UIApplication.sharedApplication().delegate as! DataController
+                let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
                 let context: NSManagedObjectContext = appDel.managedObjectContext
                 let entity = NSEntityDescription.entityForName("Song", inManagedObjectContext: context)
                 let object = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
@@ -39,7 +39,7 @@ class SecondViewController: UIViewController {
             }
         }else{
             if songInput.text != "" && artistInput.text != ""{
-                let appDel = UIApplication.sharedApplication().delegate as! DataController
+                let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
                 let context: NSManagedObjectContext = appDel.managedObjectContext
                 let entity = NSEntityDescription.entityForName("Song", inManagedObjectContext: context)
                 let object = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)

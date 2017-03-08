@@ -17,7 +17,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDel = UIApplication.sharedApplication().delegate as! DataController
+        let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
         let query = NSFetchRequest(entityName: "Song")
         do{
@@ -37,8 +37,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row].valueForKeyPath("artistName"+" - "+"songName") as! String
-        return(cell)
+        cell.textLabel?.text = list[indexPath.row].valueForKeyPath("songName") as! String
+        cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
+        return cell
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
