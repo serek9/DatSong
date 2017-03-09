@@ -35,10 +35,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         myTableView.reloadData()
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row].valueForKeyPath("songName") as! String
         cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
+        print(list[indexPath.row].valueForKeyPath("artistName"))
         return cell
     }
     
