@@ -8,8 +8,10 @@
 
 import UIKit
 import CoreData
+import SafariServices
 
 var list:[NSManagedObject] = []
+let url = NSURL(string: "https://www.google.es")
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -52,9 +54,27 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        //let selectedCell = list[indexPath.row]
+        
+        let safariVC = SFSafariViewController(URL: url!)
+        //safariVC.view.tintColor = appTintColor
+        safariVC.delegate = self
+        
+        self.presentViewController(safariVC, animated: true, completion: nil)
+    }
+}
+
+extension FirstViewController : SFSafariViewControllerDelegate{
+    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 
 //VIDEO LISTAS -- (https://www.youtube.com/watch?v=LrCqXmHenJY)
 //VIDEO COREDATA -- https://www.youtube.com/watch?v=WcQkBYu86h8
+//VIDEO SAFARIVC -- https://www.youtube.com/watch?v=q71gsQ1Q3xs
 

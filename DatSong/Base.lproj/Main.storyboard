@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Collection-->
@@ -17,28 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zNR-jx-ixw">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1z-jv-qer">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DatSong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-Di-CxC">
+                                        <rect key="frame" x="87" y="20" width="200" height="60"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zNR-jx-ixw">
+                                <rect key="frame" x="0.0" y="128" width="375" height="490"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="B1z-jv-qer">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DatSong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dc-Di-CxC">
-                                            <rect key="frame" x="86" y="27" width="200" height="45"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Zbe-L1-atD" detailTextLabel="KXk-s6-Q2A" rowHeight="45" style="IBUITableViewCellStyleValue1" id="UNo-Bg-hiD">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UNo-Bg-hiD" id="Eyt-Wk-ttj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -73,43 +71,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="1Em-QE-qjx"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="zNR-jx-ixw" secondAttribute="bottom" id="36I-NM-lIj"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="EFM-37-ro7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zNR-jx-ixw" secondAttribute="trailing" constant="-20" id="GGL-V3-LlN"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="zNR-jx-ixw" secondAttribute="bottom" id="W4E-Ad-hth"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="WJj-hW-vGt"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="zNR-jx-ixw" secondAttribute="bottom" id="ZoU-JW-xq9"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="afi-cS-cr6"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="zNR-jx-ixw" secondAttribute="bottom" id="b7W-EK-xPR"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="c1C-4a-X6L"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="eEF-pf-TY9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zNR-jx-ixw" secondAttribute="trailing" id="eJW-9B-WcX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zNR-jx-ixw" secondAttribute="trailing" constant="-20" id="jtS-Hj-CqM"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="lN3-NR-4rc"/>
-                            <constraint firstItem="zNR-jx-ixw" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="nna-qU-cO6"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="1Em-QE-qjx"/>
-                                <exclude reference="EFM-37-ro7"/>
-                                <exclude reference="GGL-V3-LlN"/>
-                                <exclude reference="WJj-hW-vGt"/>
-                                <exclude reference="afi-cS-cr6"/>
-                                <exclude reference="c1C-4a-X6L"/>
-                                <exclude reference="eEF-pf-TY9"/>
-                                <exclude reference="eJW-9B-WcX"/>
-                                <exclude reference="jtS-Hj-CqM"/>
-                                <exclude reference="lN3-NR-4rc"/>
-                                <exclude reference="nna-qU-cO6"/>
-                                <exclude reference="36I-NM-lIj"/>
-                                <exclude reference="W4E-Ad-hth"/>
-                                <exclude reference="ZoU-JW-xq9"/>
-                                <exclude reference="b7W-EK-xPR"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Collection" image="vinyls.png" id="acW-dT-cKf"/>
                     <connections>
@@ -168,7 +130,7 @@
                             </textField>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Song" image="add-2.png" id="cPa-gy-q4n"/>
                     <connections>
