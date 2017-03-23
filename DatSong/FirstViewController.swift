@@ -11,10 +11,11 @@ import CoreData
 import SafariServices
 
 var list:[NSManagedObject] = []
-let url = NSURL(string: "https://www.google.es")
+
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var url: NSURL = NSURL(string: "")!
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -44,6 +45,15 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.textLabel?.text = list[indexPath.row].valueForKeyPath("songName") as! String
         cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
         print(list[indexPath.row].valueForKeyPath("artistName"))
+        let song = list[indexPath.row].valueForKeyPath("songName") as! String
+        let artist = list[indexPath.row].valueForKeyPath("artistName") as! String
+        let total = "https://www.youtube.com/results?search_query=\(song)+\(artist)"
+        //TODO
+        //let newTotal = total.replacingOccurrences(of: " ", with: "+")
+        //let newString = total.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        let url = NSURL(string: total)
+        print(url)
+        //https://www.youtube.com/results?search_query=little+wing+jimi+hendrix
         return cell
     }
     
@@ -59,7 +69,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     {
         //let selectedCell = list[indexPath.row]
         
-        let safariVC = SFSafariViewController(URL: url!)
+        let safariVC = SFSafariViewController(URL: url)
         //safariVC.view.tintColor = appTintColor
         safariVC.delegate = self
         
