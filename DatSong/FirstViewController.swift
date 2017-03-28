@@ -48,10 +48,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         let song = list[indexPath.row].valueForKeyPath("songName") as! String
         let artist = list[indexPath.row].valueForKeyPath("artistName") as! String
         let total = "https://www.youtube.com/results?search_query=\(song)+\(artist)"
-        //TODO
-        //let newTotal = total.replacingOccurrences(of: " ", with: "+")
-        //let newString = total.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-        let url = NSURL(string: total)
+        let result = total.removeWhitespace()
+        url = NSURL(string: result)!
         print(url)
         //https://www.youtube.com/results?search_query=little+wing+jimi+hendrix
         return cell
@@ -68,7 +66,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         //let selectedCell = list[indexPath.row]
-        
         let safariVC = SFSafariViewController(URL: url)
         //safariVC.view.tintColor = appTintColor
         safariVC.delegate = self
@@ -80,6 +77,16 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 extension FirstViewController : SFSafariViewControllerDelegate{
     func safariViewControllerDidFinish(controller: SFSafariViewController) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+    
+    func removeWhitespace() -> String {
+        return self.replace(" ", replacement: "+")
     }
 }
 
