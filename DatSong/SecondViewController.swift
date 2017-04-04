@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
                 let entity = NSEntityDescription.entityForName("Song", inManagedObjectContext: context)
                 let object = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 object.setValue(songInput.text, forKey: "songName")
+                 object.setValue("No Artist", forKey: "artistName")
                 do{
                     try context.save()
                     list.append(object)
@@ -57,8 +58,5 @@ class SecondViewController: UIViewController {
             }
         }
     }
-    
-    
-    
 }
 

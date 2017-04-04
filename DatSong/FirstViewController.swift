@@ -43,16 +43,25 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row].valueForKeyPath("songName") as! String
-        cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
-        print(list[indexPath.row].valueForKeyPath("artistName"))
+        //TODO
+            cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
+             //print(list[indexPath.row].valueForKeyPath("artistName"))
         let song = list[indexPath.row].valueForKeyPath("songName") as! String
+        if list[indexPath.row].valueForKeyPath("artistName") as! String == "No Artist"{
+//            let artist = "No Artist"
+            let total = "https://www.youtube.com/results?search_query=\(song)"
+            let result = total.removeWhitespace()
+            url = NSURL(string: result)!
+        } else {
         let artist = list[indexPath.row].valueForKeyPath("artistName") as! String
         let total = "https://www.youtube.com/results?search_query=\(song)+\(artist)"
         let result = total.removeWhitespace()
         url = NSURL(string: result)!
-        print(url)
+        }
+        //print(url)
         //https://www.youtube.com/results?search_query=little+wing+jimi+hendrix
         return cell
+            
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
