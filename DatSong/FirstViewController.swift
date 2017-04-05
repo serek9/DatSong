@@ -43,12 +43,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row].valueForKeyPath("songName") as! String
-        //TODO
-            cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
-             //print(list[indexPath.row].valueForKeyPath("artistName"))
+        cell.detailTextLabel?.text = list[indexPath.row].valueForKeyPath("artistName") as! String
         let song = list[indexPath.row].valueForKeyPath("songName") as! String
         if list[indexPath.row].valueForKeyPath("artistName") as! String == "No Artist"{
-//            let artist = "No Artist"
             let total = "https://www.youtube.com/results?search_query=\(song)"
             let result = total.removeWhitespace()
             url = NSURL(string: result)!
